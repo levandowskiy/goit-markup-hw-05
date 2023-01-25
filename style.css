@@ -87,10 +87,6 @@ a {
 
 /* ///////////////////////////////////////////header */
 
-.header {
-    padding: 24px 0;
-}
-
 .header-container {
     display: flex;
     justify-content: space-between;
@@ -111,8 +107,9 @@ a {
     color: var(--navy-blue);
 }
 
-nav {
+.nav {
     display: flex;
+    align-items: center;
 }
 
 .nav-list {
@@ -121,6 +118,7 @@ nav {
 }
 
 .header-link { 
+    padding: 32px 0;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -128,16 +126,14 @@ nav {
     color: var(--ocean);
 }
 
-.active-studio, 
-.active-portfolio,
-.active-contants {
+.active {
+    position: relative;
     color: var(--ocean);
 }
 
-.active-studio::after,
-.active-portfolio::after,
-.active-contants::after {
-    top: 44px;
+.active::after {
+    bottom: 0;
+    left: 0;
     position: absolute;
     content: "";
     height: 4px;
@@ -391,18 +387,15 @@ nav {
     padding-top: 130px;
 }
 
-.customers-item {
-    border: 1px solid var(--light-slate);
-    border-radius: 4px;
-    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 .customers-link {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 88px;
     width: 168px;
+    border: 1px solid var(--light-slate);
+    border-radius: 4px;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers-icon {
@@ -410,11 +403,11 @@ nav {
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.customers-item:is(:hover, :focus) {
+.customers-link:is(:hover, :focus) {
     border-color: var(--ocean);
 }
 
-.customers-item:is(:hover, :focus) .customers-icon{
+.customers-link:is(:hover, :focus) .customers-icon{
     fill: var(--ocean);
 }
   
@@ -513,6 +506,7 @@ nav {
 
 .footer-container {
     display: flex;
+    align-items: baseline;
 }
 
 .footer-content {
